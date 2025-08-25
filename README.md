@@ -2,6 +2,9 @@
 
 A React-based calculator for determining Stripe payment processing fees and amounts. This tool helps you calculate either what you'll receive after fees or what you should charge to receive a desired amount.
 
+## Demo
+https://stripe-fees.dj3dw.com/
+
 ## Features
 
 - Calculate received amount after Stripe fees

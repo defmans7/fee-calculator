@@ -244,6 +244,10 @@ const StripeFeeCalculator = () => {
         Default values are set to Stripe's standard rates for Australian domestic cards (1.7% + $0.30).
         Actual rates may vary based on your account and region.
       </div>
+      <div className="mt-6 text-xs text-gray-500 text-center">
+        Clone/Star/Fork repo: https://github.com/defmans7/fee-calculator
+      </div>
+
     </div>
   );
 };
