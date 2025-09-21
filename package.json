@@ -9,6 +9,7 @@
     "start": "NODE_ENV=production bun src/index.jsx"
   },
   "dependencies": {
+    "bun": "latest",
     "react": "^19",
     "react-dom": "^19",
     "lucide-react": "^0.541.0",
