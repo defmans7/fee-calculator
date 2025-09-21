@@ -14,8 +14,11 @@ RUN bun install
 COPY . .
 
 # Expose the default port (change if your app uses a different port)
-EXPOSE 3000
+EXPOSE 3031
+
+# Health check: ensure the app responds on the root path
+HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 \
+  CMD curl -f http://localhost:3031/ || exit 1
 
 # Start the app
 CMD ["bun", "start"]
-
