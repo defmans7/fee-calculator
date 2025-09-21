@@ -1,9 +1,6 @@
 # Use official Bun image
 FROM oven/bun:1.2
 
-# Install curl for health checks
-RUN apk add --no-cache curl
-
 # Set working directory
 WORKDIR /app
 
@@ -19,9 +16,9 @@ COPY . .
 # Expose the default port (change if your app uses a different port)
 EXPOSE 3031
 
-# Health check: ensure the app responds on the root path
+# Health check using Bun's built-in fetch capability
 HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 \
-  CMD curl -f http://localhost:3031/ || exit 1
+  CMD bun -e "fetch('http://localhost:3001/').then(r => r.ok ? process.exit(0) : process.exit(1)).catch(() => process.exit(1))"
 
 # Start the app
 CMD ["bun", "start"]
