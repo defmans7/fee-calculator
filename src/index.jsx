@@ -21,6 +21,15 @@ const server = serve({
       },
     },
 
+    "/health": {
+      async GET(req) {
+        return new Response("ok", {
+          status: 200,
+          headers: { "Content-Type": "text/plain" },
+        });
+      },
+    },
+
   },
 
   development: process.env.NODE_ENV !== "production" && {
